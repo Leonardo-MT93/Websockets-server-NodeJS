@@ -39,6 +39,8 @@ btnEnviar.addEventListener( 'click', () => {
         fecha: new Date().getTime()
     }
     //Sirve para emitir - solo minusculas
-    socket.emit('enviar-mensaje', payload);
+    socket.emit('enviar-mensaje', payload, (id) => {
+        console.log('Desde el server', id)
+    });
 
 })
